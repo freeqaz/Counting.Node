@@ -17,11 +17,11 @@ receiver.on('message', function (buf) {
 
     console.log("job" + job);
 
-    var result = {};
-    result.Data = {};
+    var result = { Data: {} };
 
     // Do the work.
     for (var i = 1; i < tasks.length; i++) {
+        // Is there a better way to do this?
         if (result.Data[tasks[i]] !== undefined) {
             result.Data[tasks[i]] += 1;
         } else {
